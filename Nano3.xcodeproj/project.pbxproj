@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B780B332A93DE70003F82DA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B322A93DE70003F82DA /* PersistenceController.swift */; };
+		3B780B362A93DE77003F82DA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B342A93DE77003F82DA /* Model.xcdatamodeld */; };
 		B88804362A9009C600645C90 /* Nano3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88804352A9009C600645C90 /* Nano3App.swift */; };
 		B88804382A9009C600645C90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88804372A9009C600645C90 /* ContentView.swift */; };
 		B888043A2A9009C700645C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88804392A9009C700645C90 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B780B322A93DE70003F82DA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		3B780B352A93DE77003F82DA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		B88804322A9009C600645C90 /* Nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88804352A9009C600645C90 /* Nano3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano3App.swift; sourceTree = "<group>"; };
 		B88804372A9009C600645C90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +36,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B780B312A93DE4B003F82DA /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3B780B322A93DE70003F82DA /* PersistenceController.swift */,
+				3B780B342A93DE77003F82DA /* Model.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		B88804292A9009C600645C90 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +66,7 @@
 			children = (
 				B88804352A9009C600645C90 /* Nano3App.swift */,
 				B88804372A9009C600645C90 /* ContentView.swift */,
+				3B780B312A93DE4B003F82DA /* Persistence */,
 				B88804392A9009C700645C90 /* Assets.xcassets */,
 				B888043B2A9009C700645C90 /* Preview Content */,
 			);
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B780B332A93DE70003F82DA /* PersistenceController.swift in Sources */,
 				B88804382A9009C600645C90 /* ContentView.swift in Sources */,
 				B88804362A9009C600645C90 /* Nano3App.swift in Sources */,
+				3B780B362A93DE77003F82DA /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +355,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3B780B342A93DE77003F82DA /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3B780B352A93DE77003F82DA /* Model.xcdatamodel */,
+			);
+			currentVersion = 3B780B352A93DE77003F82DA /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B888042A2A9009C600645C90 /* Project object */;
 }
