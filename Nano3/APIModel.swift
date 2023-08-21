@@ -25,7 +25,7 @@ class APIModel{
             }
 //
             let decoder = JSONDecoder()
-//            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             
             do {
                 let decodedObject = try decoder.decode(T.self, from: data)
