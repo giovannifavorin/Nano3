@@ -20,28 +20,20 @@ struct Quotes {
 
 class APIViewModel: ObservableObject {
     @Published var quotes: [APIResponse] = [] // Use an array of Quote objects
-    
+    let apiObject = APIModel()
+
     func fetch() {
-        guard let url = URL(string: "https://zenquotes.io/api/random") else {
-            print ("ERRO chamando a API")
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data = data, error == nil else {
-                return
-            }
-            
-            // Convert to JSON
-            do {
-                let response = try JSONDecoder().decode([APIResponse].self, from: data) // Decode an array of Quote
-                DispatchQueue.main.async {
-                    self?.quotes = response
+            Task{
+                do {
+                    let fetchedUser: [APIResponse] = try await apiObject.get(APIurl: "https://zenquotes.io/api/random")
+                    DispatchQueue.main.async {
+                        self.quotes = fetchedUser
+                    }
+                    print("API was called")
                 }
-            } catch {
-                print("Erro abrindo a API \(error)")
+                 catch{
+                    print("error")
+                }
             }
         }
-        task.resume()
-    }
 }

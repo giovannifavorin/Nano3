@@ -23,7 +23,7 @@ class APIModel{
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 throw APIError.invalidResponse("Invalid response: \(response)")
             }
-//
+
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             
