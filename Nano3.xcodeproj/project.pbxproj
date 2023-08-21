@@ -16,6 +16,8 @@
 		B88804382A9009C600645C90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88804372A9009C600645C90 /* ContentView.swift */; };
 		B888043A2A9009C700645C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88804392A9009C700645C90 /* Assets.xcassets */; };
 		B888043D2A9009C700645C90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B888043C2A9009C700645C90 /* Preview Assets.xcassets */; };
+		CEA5DA232A9401B00013CFEE /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5DA212A9401B00013CFEE /* APIModel.swift */; };
+		CEA5DA242A9401B00013CFEE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5DA222A9401B00013CFEE /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B88804372A9009C600645C90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B88804392A9009C700645C90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B888043C2A9009C700645C90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEA5DA212A9401B00013CFEE /* APIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		CEA5DA222A9401B00013CFEE /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				3B780B372A93DFDC003F82DA /* ApiRequest.swift */,
+				CEA5DA212A9401B00013CFEE /* APIModel.swift */,
+				CEA5DA222A9401B00013CFEE /* Error.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -182,8 +188,10 @@
 				B88804382A9009C600645C90 /* ContentView.swift in Sources */,
 				3B780B3D2A93E337003F82DA /* FrasesView.swift in Sources */,
 				3B780B412A93E50B003F82DA /* FavoritosView.swift in Sources */,
+				CEA5DA232A9401B00013CFEE /* APIModel.swift in Sources */,
 				B88804362A9009C600645C90 /* Nano3App.swift in Sources */,
 				3B780B382A93DFDC003F82DA /* ApiRequest.swift in Sources */,
+				CEA5DA242A9401B00013CFEE /* Error.swift in Sources */,
 				3B780B362A93DE77003F82DA /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
