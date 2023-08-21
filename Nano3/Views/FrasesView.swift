@@ -11,10 +11,6 @@ struct FrasesView: View {
     
     @StateObject var ViewModel = APIViewModel() //Chamada da API
     @StateObject var persistence : PersistenceController = PersistenceController()
-
-    init(){
-        ViewModel.fetch()
-    }
     
     var body: some View {
             
@@ -44,6 +40,9 @@ struct FrasesView: View {
             }
             .buttonStyle(.borderedProminent)
             .padding(.bottom, 20)
+        }
+        .task {
+            ViewModel.fetch()
         }
         .navigationTitle("Frases")
         .refreshable {
