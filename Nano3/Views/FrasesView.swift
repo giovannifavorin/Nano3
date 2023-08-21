@@ -19,7 +19,7 @@ struct FrasesView: View {
     var body: some View {
             
         VStack {
-            List(ViewModel.quotes, id: \.self) {quote in
+            List(ViewModel.quotes, id: \.self) {(quote: APIResponse) in
                 VStack{
                     HStack {
                         Text("\(quote.a)")

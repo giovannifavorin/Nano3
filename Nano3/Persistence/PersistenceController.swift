@@ -7,6 +7,7 @@
 
 import CloudKit
 import CoreData
+import SwiftUI
 
 class PersistenceController : ObservableObject{
     
@@ -50,11 +51,11 @@ class PersistenceController : ObservableObject{
         }
     }
     
-    func addQuote(quote : Quotes){
+    func addQuote(quote : APIResponse){
         let newQuote = Banco(context: container.viewContext)
-        newQuote.frase = quote.APIResponse.q
-        newQuote.autor = quote.APIResponse.a
-        newQuote.id = UUID()
+        newQuote.frase = quote.q
+        newQuote.autor = quote.a
+        newQuote.uuid = UUID()
         saveData()
     }
     
@@ -63,5 +64,20 @@ class PersistenceController : ObservableObject{
         container.viewContext.delete(savedQuotes[indexDeleted])
         saveData()
     }
+    
+    func removeBanco(at offsets: IndexSet, bancos: FetchedResults<Banco>, moc:NSManagedObjectContext){
+
+        withAnimation{
+            offsets.map { bancos[$0] }.forEach(moc.delete)
+
+            do{
+                try moc.save()
+            } catch{
+                print("Azedou")
+            }
+        }
+
+    }
+
     
 }
