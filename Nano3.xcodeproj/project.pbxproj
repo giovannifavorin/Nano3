@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ABCC1F5B2A93E160004AF9DC /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5A2A93E160004AF9DC /* APIModel.swift */; };
 		ABCC1F5D2A93E1BA004AF9DC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5C2A93E1BA004AF9DC /* Error.swift */; };
+		ABCC1F602A93E419004AF9DC /* ContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5F2A93E419004AF9DC /* ContentVM.swift */; };
 		B88804362A9009C600645C90 /* Nano3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88804352A9009C600645C90 /* Nano3App.swift */; };
 		B88804382A9009C600645C90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88804372A9009C600645C90 /* ContentView.swift */; };
 		B888043A2A9009C700645C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88804392A9009C700645C90 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		ABCC1F5A2A93E160004AF9DC /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		ABCC1F5C2A93E1BA004AF9DC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		ABCC1F5F2A93E419004AF9DC /* ContentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVM.swift; sourceTree = "<group>"; };
 		B88804322A9009C600645C90 /* Nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88804352A9009C600645C90 /* Nano3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano3App.swift; sourceTree = "<group>"; };
 		B88804372A9009C600645C90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,11 +38,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABCC1F5E2A93E3D9004AF9DC /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				B88804352A9009C600645C90 /* Nano3App.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
 		B88804292A9009C600645C90 = {
 			isa = PBXGroup;
 			children = (
-				ABCC1F5C2A93E1BA004AF9DC /* Error.swift */,
-				ABCC1F5A2A93E160004AF9DC /* APIModel.swift */,
+				ABCC1F5E2A93E3D9004AF9DC /* APP */,
 				B88804342A9009C600645C90 /* Nano3 */,
 				B88804332A9009C600645C90 /* Products */,
 			);
@@ -57,8 +66,10 @@
 		B88804342A9009C600645C90 /* Nano3 */ = {
 			isa = PBXGroup;
 			children = (
-				B88804352A9009C600645C90 /* Nano3App.swift */,
+				ABCC1F5A2A93E160004AF9DC /* APIModel.swift */,
 				B88804372A9009C600645C90 /* ContentView.swift */,
+				ABCC1F5F2A93E419004AF9DC /* ContentVM.swift */,
+				ABCC1F5C2A93E1BA004AF9DC /* Error.swift */,
 				B88804392A9009C700645C90 /* Assets.xcassets */,
 				B888043B2A9009C700645C90 /* Preview Content */,
 			);
@@ -145,6 +156,7 @@
 			files = (
 				ABCC1F5D2A93E1BA004AF9DC /* Error.swift in Sources */,
 				B88804382A9009C600645C90 /* ContentView.swift in Sources */,
+				ABCC1F602A93E419004AF9DC /* ContentVM.swift in Sources */,
 				ABCC1F5B2A93E160004AF9DC /* APIModel.swift in Sources */,
 				B88804362A9009C600645C90 /* Nano3App.swift in Sources */,
 			);

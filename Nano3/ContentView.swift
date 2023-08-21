@@ -7,35 +7,26 @@
 
 import SwiftUI
 
-//struct APIResponse: Hashable, Codable {
-//    let q: String
-//    let a: String
-//} Struct da API
-
 struct ContentView: View {
-    @StateObject var manager = GitHubUseVM() //Chamada da API
+    @StateObject var manager = ContentVM() //Chamada da API
     
     var body: some View {
-        VStack {
-            Button {
-//                ViewModel.fetch()
-            } label: {
-                Text("Button")
-            }
-            NavigationView {
-//                List {
-//                    ForEach(ViewModel.quotes, id: \.self) { quote in
-//                        HStack {
-//                            Text("\(quote.a)\n\(quote.q)")
-//
-//                            Spacer()
-//                        }
-//                    }
-//                }
-//                .navigationTitle("Frases")
-//                .onAppear {
-////                    ViewModel.fetch()
-//                }
+        ZStack {
+            Color(red: 0.16, green: 0.18, blue: 0.31) // marca registrada Eirado
+                .ignoresSafeArea(.all)
+            VStack {
+
+                Text(manager.quote?.q ?? "aa")
+                 .foregroundColor(.white)
+   
+                Button {
+                    manager.fetch()
+                } label: {
+                    RoundedRectangle(cornerRadius: 25)
+                        .frame(width: 200, height: 100)
+                }
+            }.task {
+                manager.fetch()
             }
         }
     }
