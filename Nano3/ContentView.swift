@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+//struct APIResponse: Hashable, Codable {
+//    let q: String
+//    let a: String
+//} Struct da API
+
 struct ContentView: View {
     @StateObject var ViewModel = APIViewModel() //Chamada da API
     
