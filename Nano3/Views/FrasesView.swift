@@ -26,14 +26,14 @@ struct FrasesView: View {
                             .font(.headline)
                         Spacer()
                         Button {
-                            print("Apertou")
+                            persistence.addQuote(quote: quote)
                         } label: {
                             Image(systemName: "folder")
                         }
                     }
                     Text("\(quote.q)")
                         .multilineTextAlignment(.leading)
-                    
+                
                 }
 
             }
