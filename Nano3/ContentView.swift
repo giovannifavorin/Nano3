@@ -1,21 +1,38 @@
 //
 //  ContentView.swift
-//  Nano3
+//  FavFood
 //
-//  Created by Giovanni Favorin de Melo on 18/08/23.
+//  Created by Giovanni Favorin de Melo on 14/08/23.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var ViewModel = APIViewModel() //Chamada da API
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Button {
+                ViewModel.fetch()
+            } label: {
+                Text("Button")
+            }
+            NavigationView {
+                List {
+                    ForEach(ViewModel.quotes, id: \.self) { quote in
+                        HStack {
+                            Text("\(quote.a)\n\(quote.q)")
+                            
+                            Spacer()
+                        }
+                    }
+                }
+                .navigationTitle("Frases")
+                .onAppear {
+                    ViewModel.fetch()
+                }
+            }
         }
-        .padding()
     }
 }
 
