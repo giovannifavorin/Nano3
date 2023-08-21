@@ -15,15 +15,21 @@ struct ContentView: View {
             Color(red: 0.16, green: 0.18, blue: 0.31) // marca registrada Eirado
                 .ignoresSafeArea(.all)
             VStack {
-
-                Text(manager.quote?.q ?? "aa")
-                 .foregroundColor(.white)
-   
+                RoundedRectangle(cornerRadius: 25)
+                    .frame(width: 200, height: 100)
+                    .overlay{
+                        Text(manager.quote?.login ?? "aaaaaaa")
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
                 Button {
                     manager.fetch()
                 } label: {
                     RoundedRectangle(cornerRadius: 25)
-                        .frame(width: 200, height: 100)
+                        .frame(width: 100, height: 50)
+                        .overlay{
+                            Text("F").foregroundColor(.white)
+                        }
                 }
             }.task {
                 manager.fetch()
