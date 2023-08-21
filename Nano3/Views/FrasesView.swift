@@ -10,6 +10,7 @@ import SwiftUI
 struct FrasesView: View {
     
     @StateObject var ViewModel = APIViewModel() //Chamada da API
+    @StateObject var persistence : PersistenceController = PersistenceController()
 
     init(){
         ViewModel.fetch()
