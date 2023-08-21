@@ -16,24 +16,33 @@ struct FrasesView: View {
     }
     
     var body: some View {
-        VStack {
             
-            List {
-                ForEach(ViewModel.quotes, id: \.self) { quote in
+        VStack {
+            List(ViewModel.quotes, id: \.self) {quote in
+                VStack{
                     HStack {
-                        Text("\(quote.a)\n\(quote.q)")
+                        Text("\(quote.a)")
+                            .font(.headline)
                         Spacer()
+                        Button {
+                            print("Apertou")
+                        } label: {
+                            Image(systemName: "folder")
+                        }
                     }
+                    Text("\(quote.q)")
+                        .multilineTextAlignment(.leading)
+                    
                 }
+
             }
-            .listStyle(.plain)
             Button {
                 ViewModel.fetch()
             } label: {
                 Text("Gerar Nova Frase")
             }
             .buttonStyle(.borderedProminent)
-            .padding(20)
+            .padding(.bottom, 20)
         }
         .navigationTitle("Frases")
         .refreshable {
