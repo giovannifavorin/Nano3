@@ -8,30 +8,29 @@
 import Foundation
 
 struct QuoteResponse: Codable {
-    let q: String?
-//    let a: String?
+//    let q: String
+    let a: String?
 //    let i: String?
 //    let c: String?
 //    let h: String?
 }
 
-struct GitHubUser: Codable {
-    let login: String?
-//    let avatarUrl: String?
-//    let bio: String?
-}
+//struct QuoteResponse: Codable{
+//    let array: [Quote]
+//}
+
 
 class ContentVM: ObservableObject{
     
     var manager = APIModel()
-    @Published var quote: GitHubUser?
+    @Published var quote: QuoteResponse?
     
     func fetch() {
         Task{
             do {
-                let fetchedUser: GitHubUser = try await manager.get(APIurl: "https://api.github.com/users/a")
+                let fetchedUser: [QuoteResponse] = try await manager.get(APIurl: "https://zenquotes.io/api/random")
                 DispatchQueue.main.async {
-                    self.quote = fetchedUser
+                    self.quote = fetchedUser.first
                 }
                 print("API was called")
             }

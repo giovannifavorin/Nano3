@@ -17,8 +17,9 @@ struct ContentView: View {
             VStack {
                 RoundedRectangle(cornerRadius: 25)
                     .frame(width: 200, height: 100)
+                    .foregroundColor(.black)
                     .overlay{
-                        Text(manager.quote?.login ?? "aaaaaaa")
+                        Text(manager.quote?.a ?? "")
                             .foregroundColor(.white)
                     }
                     Spacer()
