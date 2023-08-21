@@ -13,29 +13,29 @@ import SwiftUI
 //} Struct da API
 
 struct ContentView: View {
-    @StateObject var ViewModel = APIViewModel() //Chamada da API
+    @StateObject var manager = GitHubUseVM() //Chamada da API
     
     var body: some View {
         VStack {
             Button {
-                ViewModel.fetch()
+//                ViewModel.fetch()
             } label: {
                 Text("Button")
             }
             NavigationView {
-                List {
-                    ForEach(ViewModel.quotes, id: \.self) { quote in
-                        HStack {
-                            Text("\(quote.a)\n\(quote.q)")
-                            
-                            Spacer()
-                        }
-                    }
-                }
-                .navigationTitle("Frases")
-                .onAppear {
-                    ViewModel.fetch()
-                }
+//                List {
+//                    ForEach(ViewModel.quotes, id: \.self) { quote in
+//                        HStack {
+//                            Text("\(quote.a)\n\(quote.q)")
+//
+//                            Spacer()
+//                        }
+//                    }
+//                }
+//                .navigationTitle("Frases")
+//                .onAppear {
+////                    ViewModel.fetch()
+//                }
             }
         }
     }
