@@ -16,7 +16,7 @@ struct FrasesView: View {
             
         VStack {
             List(ViewModel.quotes, id: \.self) {(quote: APIResponse) in
-                VStack{
+                VStack {
                     HStack {
                         Text("\(quote.a)")
                             .font(.headline)

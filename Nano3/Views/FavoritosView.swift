@@ -16,11 +16,11 @@ struct FavoritosView: View {
     @State private var acessoDelete: PersistenceController = PersistenceController()
     
     var body: some View {
-        VStack{
+        VStack {
             
-            List(){
-                ForEach(acessoBanco){ banco in
-                    VStack{
+            List() {
+                ForEach(acessoBanco) { banco in
+                    VStack {
                         HStack {
                             Text("\(banco.autor ?? "Desconhecido")")
                                 .font(.headline)
@@ -28,14 +28,11 @@ struct FavoritosView: View {
                         }
                         Text("\(banco.frase ?? "Desconhecida")")
                     }
-                    
                 }
                 .onDelete{ offsets in
                     acessoDelete.removeBanco(at: offsets, bancos: acessoBanco, moc: moc)
                 }
             }
-            
-            
         }
         .navigationTitle("Favoritos")
     }

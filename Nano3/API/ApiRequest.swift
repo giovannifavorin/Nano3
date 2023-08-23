@@ -23,7 +23,7 @@ class APIViewModel: ObservableObject {
     let apiObject = APIModel()
 
     func fetch() {
-            Task{
+            Task {
                 do {
                     let fetchedUser: [APIResponse] = try await apiObject.get(APIurl: "https://zenquotes.io/api/random")
                     DispatchQueue.main.async {

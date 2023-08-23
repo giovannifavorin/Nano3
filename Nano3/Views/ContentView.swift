@@ -7,25 +7,22 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
-    
     @State var selectTab:Int = 0
     
     var body: some View {
-        TabView(selection: $selectTab){
-            NavigationView{
+        TabView(selection: $selectTab) {
+            NavigationView {
                 FrasesView()
             }
             .tabItem {
                 Label("Frases", systemImage: "book")
             }
             .tag(selectTab)
-            NavigationView{
+            NavigationView {
                 FavoritosView()
             }
-            .tabItem{
+            .tabItem {
                 Label("Favoritos", systemImage: "star.fill")
             }
             .tag(selectTab)

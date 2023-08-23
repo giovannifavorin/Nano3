@@ -8,11 +8,8 @@
 import Foundation
 import SwiftUI
 
-
-class APIModel{
-    
+class APIModel {
     func get<T: Decodable>(APIurl: String) async throws -> T {
-        
         guard let url = URL(string: APIurl) else {
             throw APIError.invalidURL
         }
@@ -38,9 +35,7 @@ class APIModel{
         }
     }
     
-    
     func post<T: Decodable, U: Encodable>(APIurl: String, requestBody: U) async throws -> T {
-        
         guard let url = URL(string: APIurl) else {
             throw APIError.invalidURL
         }
