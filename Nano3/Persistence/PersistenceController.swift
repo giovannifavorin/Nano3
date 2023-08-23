@@ -63,6 +63,7 @@ class PersistenceController : ObservableObject{
         let indexDeleted = index.first!
         container.viewContext.delete(savedQuotes[indexDeleted])
         saveData()
+        fetchQuotes()
     }
     
     func removeBanco(at offsets: IndexSet, bancos: FetchedResults<Banco>, moc:NSManagedObjectContext){

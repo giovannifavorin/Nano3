@@ -13,7 +13,7 @@ struct FrasesView: View {
     @StateObject var persistence : PersistenceController = PersistenceController()
     
     var body: some View {
-            
+        
         VStack {
             List(ViewModel.quotes, id: \.self) {(quote: APIResponse) in
                 VStack{
@@ -29,9 +29,9 @@ struct FrasesView: View {
                     }
                     Text("\(quote.q)")
                         .multilineTextAlignment(.leading)
-                
+                    
                 }
-
+                
             }
             Button {
                 ViewModel.fetch()

@@ -9,17 +9,16 @@ import SwiftUI
 
 struct FavoritosView: View {
     
-    @Environment(\.managedObjectContext) private var moc 
+    @Environment(\.managedObjectContext) private var moc
     @FetchRequest(entity: Banco.entity(), sortDescriptors: [])
     private var acessoBanco:FetchedResults<Banco>
-    
-    @State private var acessoDelete: PersistenceController = PersistenceController()
+    @StateObject var persistence : PersistenceController = PersistenceController()
     
     var body: some View {
         VStack{
             
             List(){
-                ForEach(acessoBanco){ banco in
+                ForEach(persistence.savedQuotes){ banco in
                     VStack{
                         HStack {
                             Text("\(banco.autor ?? "Desconhecido")")
@@ -31,11 +30,12 @@ struct FavoritosView: View {
                     
                 }
                 .onDelete{ offsets in
-                    acessoDelete.removeBanco(at: offsets, bancos: acessoBanco, moc: moc)
+                    persistence.removeBanco(at: offsets, bancos: acessoBanco, moc: moc)
                 }
             }
-            
-            
+        }
+        .task {
+            persistence.fetchQuotes()
         }
         .navigationTitle("Favoritos")
     }
