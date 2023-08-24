@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct CloudKitView: View {
-    @StateObject  var manager = CloudKitVM()
+    @StateObject  var manager = CloudKitViewModel()
     var body: some View {
         ZStack {
             Color(red: 0.16, green: 0.18, blue: 0.31) // marca registrada Eirado
                 .ignoresSafeArea(.all)
             VStack {
-                Text(manager.isSignedIn.description.uppercased())
-                Text(manager.signInError)
-                Text("Name: \(manager.userName)")
-                Text(manager.permissionStatus.description)
+                TextField("Add something here", text: $manager.text )
+                    .frame(width: 500)
+                    .foregroundColor(.white)
+                Button{
+                    
+                }label: {
+                    Text("Add")
+                }
             }
         }
     }
