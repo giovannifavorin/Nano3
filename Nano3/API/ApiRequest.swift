@@ -45,7 +45,9 @@ class APIViewModel: ObservableObject {
     
     var body = PasteBin(api_paste_code: "asfasfasfas")
     var url = "https://pastebin.com/api/api_post.php"
-    
+    let APIurl = "https://dummy.restapiexample.com/api/v1/create"
+    let APIurl2 = "https://reqres.in/api/users"
+
     func post(){
         Task{
             do{
