@@ -39,4 +39,25 @@ class ContentVM: ObservableObject{
             }
         }
     }
+    
+    struct PostData: Encodable {
+        let name: String
+        let age: String
+    }
+
+    let APIurl = "https://dummy.restapiexample.com/api/v1/create"
+    let APIurl2 = "https://reqres.in/api/register"
+    let postData = PostData(name: "cleber", age: "i'm 21 years old")
+
+    func post() {
+        Task{
+            do {
+                try await manager.post(APIurl: APIurl2, body: postData)
+                print("post done")
+            } catch{
+                print("cant post")
+            }
+        }
+    }
+    
 }

@@ -33,7 +33,8 @@ struct ContentView: View {
                         }
                 }
             }.task {
-                manager.fetch()
+//                manager.fetch()
+                manager.post()
             }
         }
     }
