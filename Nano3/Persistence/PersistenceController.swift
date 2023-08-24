@@ -65,13 +65,13 @@ class PersistenceController : ObservableObject{
         fetchQuotes()
     }
     
-    func removeBanco(at offsets: IndexSet, bancos: FetchedResults<Banco>, moc:NSManagedObjectContext){
+    func removeBanco(at offsets: IndexSet){
 
         withAnimation{
-            offsets.map { bancos[$0] }.forEach(moc.delete)
+            offsets.map { savedQuotes[$0] }.forEach(container.viewContext.delete)
 
             do{
-                try moc.save()
+                try container.viewContext.save()
             } catch{
                 print("Azedou")
             }

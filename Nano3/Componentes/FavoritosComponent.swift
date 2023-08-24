@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoritosView: View {
+struct FavoritosComponent: View {
     
     @Environment(\.managedObjectContext) private var moc
     @FetchRequest(entity: Banco.entity(), sortDescriptors: [])
@@ -21,7 +21,7 @@ struct FavoritosView: View {
                 List(){
                     ForEach(persistence.savedQuotes){ banco in
                         NavigationLink{
-                            FavoritosDetailedView(autor: banco.autor ?? "Desconhecido", frase: banco.frase ?? "Deconhecido")
+                            FavoritosDetailedComponent(autor: banco.autor ?? "Desconhecido", frase: banco.frase ?? "Deconhecido")
                         }label: {
                             VStack{
                                 HStack {
@@ -35,7 +35,7 @@ struct FavoritosView: View {
                         }
                     }
                     .onDelete{ offsets in
-                        persistence.removeBanco(at: offsets, bancos: acessoBanco, moc: moc)
+                        persistence.removeBanco(at: offsets)
                     }
 
                 }
@@ -48,8 +48,8 @@ struct FavoritosView: View {
     }
 }
 
-struct FavoritosView_Previews: PreviewProvider {
+struct FavoritosComponent_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritosView()
+        FavoritosComponent()
     }
 }

@@ -10,9 +10,9 @@
 		3B780B332A93DE70003F82DA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B322A93DE70003F82DA /* PersistenceController.swift */; };
 		3B780B362A93DE77003F82DA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B342A93DE77003F82DA /* Model.xcdatamodeld */; };
 		3B780B382A93DFDC003F82DA /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B372A93DFDC003F82DA /* ApiRequest.swift */; };
-		3B780B3D2A93E337003F82DA /* FrasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B3C2A93E337003F82DA /* FrasesView.swift */; };
-		3B780B412A93E50B003F82DA /* FavoritosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B402A93E50B003F82DA /* FavoritosView.swift */; };
-		62D90F202A96808000B94596 /* FavoritosDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D90F1F2A96808000B94596 /* FavoritosDetailedView.swift */; };
+		3B780B3D2A93E337003F82DA /* FrasesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B3C2A93E337003F82DA /* FrasesComponent.swift */; };
+		3B780B412A93E50B003F82DA /* FavoritosComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B402A93E50B003F82DA /* FavoritosComponent.swift */; };
+		62D90F202A96808000B94596 /* FavoritosDetailedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D90F1F2A96808000B94596 /* FavoritosDetailedComponent.swift */; };
 		B88804362A9009C600645C90 /* Nano3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88804352A9009C600645C90 /* Nano3App.swift */; };
 		B88804382A9009C600645C90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88804372A9009C600645C90 /* ContentView.swift */; };
 		B888043A2A9009C700645C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88804392A9009C700645C90 /* Assets.xcassets */; };
@@ -26,9 +26,9 @@
 		3B780B352A93DE77003F82DA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3B780B372A93DFDC003F82DA /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		3B780B392A93E259003F82DA /* Nano3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano3.entitlements; sourceTree = "<group>"; };
-		3B780B3C2A93E337003F82DA /* FrasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrasesView.swift; sourceTree = "<group>"; };
-		3B780B402A93E50B003F82DA /* FavoritosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosView.swift; sourceTree = "<group>"; };
-		62D90F1F2A96808000B94596 /* FavoritosDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosDetailedView.swift; sourceTree = "<group>"; };
+		3B780B3C2A93E337003F82DA /* FrasesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrasesComponent.swift; sourceTree = "<group>"; };
+		3B780B402A93E50B003F82DA /* FavoritosComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosComponent.swift; sourceTree = "<group>"; };
+		62D90F1F2A96808000B94596 /* FavoritosDetailedComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosDetailedComponent.swift; sourceTree = "<group>"; };
 		B88804322A9009C600645C90 /* Nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88804352A9009C600645C90 /* Nano3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano3App.swift; sourceTree = "<group>"; };
 		B88804372A9009C600645C90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,11 +72,18 @@
 			isa = PBXGroup;
 			children = (
 				B88804372A9009C600645C90 /* ContentView.swift */,
-				3B780B3C2A93E337003F82DA /* FrasesView.swift */,
-				3B780B402A93E50B003F82DA /* FavoritosView.swift */,
-				62D90F1F2A96808000B94596 /* FavoritosDetailedView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3B780B882A97CFBF003F82DA /* Componentes */ = {
+			isa = PBXGroup;
+			children = (
+				62D90F1F2A96808000B94596 /* FavoritosDetailedComponent.swift */,
+				3B780B402A93E50B003F82DA /* FavoritosComponent.swift */,
+				3B780B3C2A93E337003F82DA /* FrasesComponent.swift */,
+			);
+			path = Componentes;
 			sourceTree = "<group>";
 		};
 		B88804292A9009C600645C90 = {
@@ -101,6 +108,7 @@
 				3B780B392A93E259003F82DA /* Nano3.entitlements */,
 				B88804352A9009C600645C90 /* Nano3App.swift */,
 				3B780B3F2A93E352003F82DA /* Views */,
+				3B780B882A97CFBF003F82DA /* Componentes */,
 				3B780B3E2A93E340003F82DA /* API */,
 				3B780B312A93DE4B003F82DA /* Persistence */,
 				B88804392A9009C700645C90 /* Assets.xcassets */,
@@ -189,9 +197,9 @@
 			files = (
 				3B780B332A93DE70003F82DA /* PersistenceController.swift in Sources */,
 				B88804382A9009C600645C90 /* ContentView.swift in Sources */,
-				3B780B3D2A93E337003F82DA /* FrasesView.swift in Sources */,
-				62D90F202A96808000B94596 /* FavoritosDetailedView.swift in Sources */,
-				3B780B412A93E50B003F82DA /* FavoritosView.swift in Sources */,
+				3B780B3D2A93E337003F82DA /* FrasesComponent.swift in Sources */,
+				62D90F202A96808000B94596 /* FavoritosDetailedComponent.swift in Sources */,
+				3B780B412A93E50B003F82DA /* FavoritosComponent.swift in Sources */,
 				CEA5DA232A9401B00013CFEE /* APIModel.swift in Sources */,
 				B88804362A9009C600645C90 /* Nano3App.swift in Sources */,
 				3B780B382A93DFDC003F82DA /* ApiRequest.swift in Sources */,

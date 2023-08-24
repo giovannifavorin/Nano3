@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FrasesView: View {
+struct FrasesComponent: View {
     
     @StateObject var ViewModel = APIViewModel() //Chamada da API
     @StateObject var persistence : PersistenceController = PersistenceController()
@@ -51,8 +51,8 @@ struct FrasesView: View {
     }
 }
 
-struct FrasesView_Previews: PreviewProvider {
+struct FrasesComponent_Previews: PreviewProvider {
     static var previews: some View {
-        FrasesView()
+        FrasesComponent()
     }
 }

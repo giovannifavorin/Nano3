@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoritosDetailedView: View {
+struct FavoritosDetailedComponent: View {
     var ViewModel = APIViewModel()
     var autor:String
     var frase:String
@@ -25,10 +25,10 @@ struct FavoritosDetailedView: View {
             Button{
                 
                 Task{
-                    let post = ViewModel.post(text: frase+"-"+autor)
-                    
-                    link = post
-                    print(post)
+//                    let post = ViewModel.post(text: frase+"-"+autor)
+//                    
+//                    link = post
+//                    print(post)
                 }
               
                
@@ -43,8 +43,8 @@ struct FavoritosDetailedView: View {
     }
 }
 
-struct FavoritosDetailed_Previews: PreviewProvider {
+struct FavoritosDetailedComponent_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritosDetailedView(autor: "Andrew Tate", frase: "Breath air!")
+        FavoritosDetailedComponent(autor: "Andrew Tate", frase: "Breath air!")
     }
 }
