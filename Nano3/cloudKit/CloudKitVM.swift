@@ -17,9 +17,9 @@ class CloudKitVM: ObservableObject{
     @Published var permissionStatus: Bool = false
     
     init(){
-//        getIcloudStatus()
+        getIcloudStatus()
         getPermission()
-//        getUserID()
+        getUserID()
     }
     
     func getUserID(){
@@ -36,6 +36,8 @@ class CloudKitVM: ObservableObject{
             DispatchQueue.main.async {
                 if let name = userName?.nameComponents?.givenName{
                     self?.userName = name
+                    print("dasfas")
+                    
                 }
             }
         }
@@ -67,6 +69,7 @@ class CloudKitVM: ObservableObject{
             DispatchQueue.main.async {
                 if permissionStatus == .granted{
                     self?.permissionStatus = true
+                    print("dadaasdasd")
                 }
             }
         }
