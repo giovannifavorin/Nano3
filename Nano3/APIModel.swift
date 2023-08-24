@@ -20,10 +20,10 @@ class APIModel{
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
             
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            guard let httpResponse = response as? HTTPURLResponse, (200...201).contains(httpResponse.statusCode)else {
                 throw APIError.invalidResponse("Invalid response: \(response)")
             }
-//
+
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             
@@ -51,14 +51,17 @@ class APIModel{
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = try JSONEncoder().encode(body)
             
-            let (_, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: request)
             
             
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            guard let httpResponse = response as? HTTPURLResponse, (200...201).contains(httpResponse.statusCode) else {
                 throw APIError.invalidResponse("Invalid response: \(response)")
             }
             print("HTTP Status Code: \(httpResponse.statusCode)")
-                                  
+            
+            if let dataResponse = String(data: data, encoding: .utf16) {
+                     print("Response Data:\n\(dataResponse)")
+                 }
             
         } catch {
             throw APIError.invalidData("Failed to fetch data: \(error)")

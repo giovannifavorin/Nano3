@@ -46,7 +46,7 @@ class ContentVM: ObservableObject{
     }
 
     let APIurl = "https://dummy.restapiexample.com/api/v1/create"
-    let APIurl2 = "https://reqres.in/api/register"
+    let APIurl2 = "https://reqres.in/api/users"
     let postData = PostData(name: "cleber", age: "i'm 21 years old")
 
     func post() {
