@@ -10,7 +10,6 @@ import SwiftUI
 struct FrasesView: View {
     
     @StateObject var ViewModel = APIViewModel() //Chamada da API
-    @StateObject var persistence : PersistenceController = PersistenceController()
     
     var body: some View {
         
@@ -22,17 +21,16 @@ struct FrasesView: View {
                             .font(.headline)
                         Spacer()
                         Button {
-                            persistence.addQuote(quote: quote)
+                            PersistenceController.shared.addQuote(quote: quote)
                         } label: {
                             Image(systemName: "folder")
                         }
                     }
                     Text("\(quote.q)")
                         .multilineTextAlignment(.leading)
-                    
                 }
-                
             }
+            
             Button {
                 ViewModel.fetch()
             } label: {

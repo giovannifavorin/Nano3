@@ -19,21 +19,21 @@ struct Quotes {
 }
 
 class APIViewModel: ObservableObject {
-    @Published var quotes: [APIResponse] = [] // Use an array of Quote objects
+    @Published var quotes: [APIResponse] = []// Use an array of Quote objects
     let apiObject = APIModel()
-
+    
     func fetch() {
-            Task{
-                do {
-                    let fetchedUser: [APIResponse] = try await apiObject.get(APIurl: "https://zenquotes.io/api/random")
-                    DispatchQueue.main.async {
-                        self.quotes = fetchedUser
-                    }
-                    print("API was called")
+        Task{
+            do {
+                let fetchedUser: [APIResponse] = try await apiObject.get(APIurl: "https://zenquotes.io/api/random")
+                DispatchQueue.main.async {
+                    self.quotes = fetchedUser
                 }
-                 catch{
-                    print("error")
-                }
+                print("API was called")
+            }
+            catch{
+                print("error")
             }
         }
+    }
 }

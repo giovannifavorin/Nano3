@@ -3,6 +3,5 @@
     <entity name="Banco" representedClassName="Banco" syncable="YES" codeGenerationType="class">
         <attribute name="autor" optional="YES" attributeType="String"/>
         <attribute name="frase" optional="YES" attributeType="String"/>
-        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
 </model>

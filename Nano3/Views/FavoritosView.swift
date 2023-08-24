@@ -27,11 +27,8 @@ struct FavoritosView: View {
                         }
                         Text("\(banco.frase ?? "Desconhecida")")
                     }
-                    
                 }
-                .onDelete{ offsets in
-                    persistence.removeBanco(at: offsets, bancos: acessoBanco, moc: moc)
-                }
+                .onDelete(perform: PersistenceController.shared.deleteObject)
             }
         }
         .task {

@@ -55,7 +55,6 @@ class PersistenceController : ObservableObject{
         let newQuote = Banco(context: container.viewContext)
         newQuote.frase = quote.q
         newQuote.autor = quote.a
-        newQuote.uuid = UUID()
         saveData()
     }
     
@@ -64,20 +63,4 @@ class PersistenceController : ObservableObject{
         container.viewContext.delete(savedQuotes[indexDeleted])
         saveData()
     }
-    
-    func removeBanco(at offsets: IndexSet, bancos: FetchedResults<Banco>, moc:NSManagedObjectContext){
-
-        withAnimation{
-            offsets.map { bancos[$0] }.forEach(moc.delete)
-
-            do{
-                try moc.save()
-            } catch{
-                print("Azedou")
-            }
-        }
-
-    }
-
-    
 }
