@@ -39,6 +39,10 @@ class APIModel{
     }
     
     
+    
+    
+    
+    
     func post<U: Encodable>(APIurl: String, body: U) async throws{
         
         guard let url = URL(string: APIurl) else {
@@ -59,7 +63,7 @@ class APIModel{
             }
             print("HTTP Status Code: \(httpResponse.statusCode)")
             
-            if let dataResponse = String(data: data, encoding: .utf16) {
+            if let dataResponse = String(data: data, encoding: .utf8) {
                 print("Response Data:\n\(dataResponse)")
             }
             
@@ -67,14 +71,6 @@ class APIModel{
             throw APIError.invalidData("Failed to fetch data: \(error)")
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB02E6CE2A979B7C002033A4 /* CloudKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */; };
+		AB02E6D02A979B87002033A4 /* CloudKitVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6CF2A979B87002033A4 /* CloudKitVM.swift */; };
+		AB02E6D22A979BA0002033A4 /* CloudKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6D12A979BA0002033A4 /* CloudKitModel.swift */; };
 		ABCC1F5B2A93E160004AF9DC /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5A2A93E160004AF9DC /* APIModel.swift */; };
 		ABCC1F5D2A93E1BA004AF9DC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5C2A93E1BA004AF9DC /* Error.swift */; };
 		ABCC1F602A93E419004AF9DC /* ContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5F2A93E419004AF9DC /* ContentVM.swift */; };
@@ -17,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB02E6C72A9716D4002033A4 /* Nano3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano3.entitlements; sourceTree = "<group>"; };
+		AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitView.swift; sourceTree = "<group>"; };
+		AB02E6CF2A979B87002033A4 /* CloudKitVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitVM.swift; sourceTree = "<group>"; };
+		AB02E6D12A979BA0002033A4 /* CloudKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitModel.swift; sourceTree = "<group>"; };
 		ABCC1F5A2A93E160004AF9DC /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		ABCC1F5C2A93E1BA004AF9DC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		ABCC1F5F2A93E419004AF9DC /* ContentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVM.swift; sourceTree = "<group>"; };
@@ -38,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB02E6C82A978679002033A4 /* cloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */,
+				AB02E6CF2A979B87002033A4 /* CloudKitVM.swift */,
+				AB02E6D12A979BA0002033A4 /* CloudKitModel.swift */,
+			);
+			path = cloudKit;
+			sourceTree = "<group>";
+		};
 		ABCC1F5E2A93E3D9004AF9DC /* APP */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,11 +83,13 @@
 		B88804342A9009C600645C90 /* Nano3 */ = {
 			isa = PBXGroup;
 			children = (
+				AB02E6C72A9716D4002033A4 /* Nano3.entitlements */,
 				ABCC1F5A2A93E160004AF9DC /* APIModel.swift */,
 				B88804372A9009C600645C90 /* ContentView.swift */,
 				ABCC1F5F2A93E419004AF9DC /* ContentVM.swift */,
 				ABCC1F5C2A93E1BA004AF9DC /* Error.swift */,
 				B88804392A9009C700645C90 /* Assets.xcassets */,
+				AB02E6C82A978679002033A4 /* cloudKit */,
 				B888043B2A9009C700645C90 /* Preview Content */,
 			);
 			path = Nano3;
@@ -155,9 +174,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABCC1F5D2A93E1BA004AF9DC /* Error.swift in Sources */,
+				AB02E6CE2A979B7C002033A4 /* CloudKitView.swift in Sources */,
 				B88804382A9009C600645C90 /* ContentView.swift in Sources */,
 				ABCC1F602A93E419004AF9DC /* ContentVM.swift in Sources */,
 				ABCC1F5B2A93E160004AF9DC /* APIModel.swift in Sources */,
+				AB02E6D02A979B87002033A4 /* CloudKitVM.swift in Sources */,
+				AB02E6D22A979BA0002033A4 /* CloudKitModel.swift in Sources */,
 				B88804362A9009C600645C90 /* Nano3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,10 +306,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nano3/Nano3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano3/Preview Content\"";
-				DEVELOPMENT_TEAM = TLC9D54B8V;
+				DEVELOPMENT_TEAM = 6FXWX5Z987;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -300,7 +323,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Giovanni.Nano3;
+				PRODUCT_BUNDLE_IDENTIFIER = .comsadasdadsa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -313,10 +336,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Nano3/Nano3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Nano3/Preview Content\"";
-				DEVELOPMENT_TEAM = TLC9D54B8V;
+				DEVELOPMENT_TEAM = 6FXWX5Z987;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -329,7 +353,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Giovanni.Nano3;
+				PRODUCT_BUNDLE_IDENTIFIER = .comsadasdadsa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
