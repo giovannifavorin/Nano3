@@ -17,20 +17,27 @@ struct FavoritosView: View {
     var body: some View {
         VStack{
             
-            List(){
-                ForEach(persistence.savedQuotes){ banco in
-                    VStack{
-                        HStack {
-                            Text("\(banco.autor ?? "Desconhecido")")
-                                .font(.headline)
-                            Spacer()
+            NavigationStack {
+                List(){
+                    ForEach(persistence.savedQuotes){ banco in
+                        NavigationLink{
+                            FavoritosDetailedView(autor: banco.autor ?? "Desconhecido", frase: banco.frase ?? "Deconhecido")
+                        }label: {
+                            VStack{
+                                HStack {
+                                    Text("\(banco.autor ?? "Desconhecido")")
+                                        .font(.headline)
+                              
+                                    Spacer()
+                                }
+                                Text("\(banco.frase ?? "Desconhecida")")
+                            }
                         }
-                        Text("\(banco.frase ?? "Desconhecida")")
                     }
-                    
-                }
-                .onDelete{ offsets in
-                    persistence.removeBanco(at: offsets, bancos: acessoBanco, moc: moc)
+                    .onDelete{ offsets in
+                        persistence.removeBanco(at: offsets, bancos: acessoBanco, moc: moc)
+                    }
+
                 }
             }
         }
