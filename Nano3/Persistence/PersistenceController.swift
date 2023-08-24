@@ -55,7 +55,6 @@ class PersistenceController : ObservableObject{
         let newQuote = Banco(context: container.viewContext)
         newQuote.frase = quote.q
         newQuote.autor = quote.a
-        newQuote.uuid = UUID()
         saveData()
     }
     
