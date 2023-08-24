@@ -36,4 +36,23 @@ class APIViewModel: ObservableObject {
                 }
             }
         }
+    
+    struct PasteBin:Codable{
+        var api_dev_key:String = "wH-znJIi-LkLNm37w6oH-o60C3KOVSEk"
+        var api_option:String = "paste"
+        let api_paste_code:String
+    }
+    
+    var body = PasteBin(api_paste_code: "asfasfasfas")
+    var url = "https://pastebin.com/api/api_post.php"
+    
+    func post(){
+        Task{
+            do{
+              try await apiObject.post(APIurl: url, body: body)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

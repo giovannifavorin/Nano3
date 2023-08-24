@@ -25,9 +25,8 @@ struct FavoritosDetailedView: View {
             Button{
                 
                 Task{
-                    let post = ViewModel.post(text: frase+"-"+autor)
-                    
-                    link = post
+                    let post:Any = ViewModel.post()
+//                    link = post
                     print(post)
                 }
               
