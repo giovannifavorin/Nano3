@@ -49,7 +49,7 @@ class ContentVM: ObservableObject{
     let APIurl2 = "https://reqres.in/api/users"
     let postData = PostData(name: "cleber", age: "i'm 21 years old")
 
-    func post() {
+    func postRequest(){
         Task{
             do {
                 try await manager.post(APIurl: APIurl2, body: postData)
@@ -60,4 +60,14 @@ class ContentVM: ObservableObject{
         }
     }
     
+    func deleteRequest(){
+        Task{
+            do {
+                try await manager.delete(APIurl: "https://reqres.in/api/users/2")
+                print("Delete successful")
+            } catch {
+                print("Error deleting data")
+            }
+        }
+    }
 }

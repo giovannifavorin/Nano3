@@ -34,7 +34,8 @@ struct ContentView: View {
                 }
             }.task {
 //                manager.fetch()
-                manager.post()
+//                manager.postRequest()
+                manager.deleteRequest()
             }
         }
     }
