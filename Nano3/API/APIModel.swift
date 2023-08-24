@@ -10,7 +10,6 @@ import SwiftUI
 
 
 class APIModel{
-    
     func get<T: Decodable>(APIurl: String) async throws -> T {
         
         guard let url = URL(string: APIurl) else {
@@ -39,7 +38,11 @@ class APIModel{
     }
     
     
-    func post<U: Encodable>(APIurl: String, body: U) async throws{
+    
+    
+    
+    
+    func post<T: Codable ,U: Encodable>(APIurl: String, body: U) async throws -> T{
         
         guard let url = URL(string: APIurl) else {
             throw APIError.invalidURL
@@ -59,22 +62,15 @@ class APIModel{
             }
             print("HTTP Status Code: \(httpResponse.statusCode)")
             
-            if let dataResponse = String(data: data, encoding: .utf16) {
+            if let dataResponse = String(data: data, encoding: .utf8) {
                 print("Response Data:\n\(dataResponse)")
+                return dataResponse as! T
             }
             
         } catch {
             throw APIError.invalidData("Failed to fetch data: \(error)")
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
