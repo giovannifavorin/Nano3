@@ -15,12 +15,24 @@ struct CloudKitView: View {
                 .ignoresSafeArea(.all)
             VStack {
                 TextField("Add something here", text: $manager.text )
-                    .frame(width: 500)
-                    .foregroundColor(.white)
+                    
+                   
+                    .frame(width: 300,height: 50)
+                    .padding(.leading)
+                    .background(Color.white.opacity(0.4))
+                    .cornerRadius(20)
                 Button{
                     
                 }label: {
-                    Text("Add")
+                    Rectangle()
+                        .fill(.red)
+                        .frame(width: 200, height: 50)
+                        .cornerRadius(20)
+                        .overlay {
+                            Text("Add")
+                                .foregroundColor(.white)
+                        }
+                   
                 }
             }
         }
