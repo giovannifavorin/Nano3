@@ -43,7 +43,7 @@ class APIModel{
     
     
     
-    func post<U: Encodable>(APIurl: String, body: U) async throws{
+    func post<T: Codable ,U: Encodable>(APIurl: String, body: U) async throws -> T{
         
         guard let url = URL(string: APIurl) else {
             throw APIError.invalidURL
@@ -65,6 +65,7 @@ class APIModel{
             
             if let dataResponse = String(data: data, encoding: .utf8) {
                 print("Response Data:\n\(dataResponse)")
+                return dataResponse as! T
             }
             
         } catch {

@@ -24,7 +24,7 @@ struct ContentView: View {
                     }
                     Spacer()
                 Button {
-                    manager.fetch()
+//                    manager.fetch()
                 } label: {
                     RoundedRectangle(cornerRadius: 25)
                         .frame(width: 100, height: 50)
@@ -34,7 +34,7 @@ struct ContentView: View {
                 }
             }.task {
 //                manager.fetch()
-                manager.postRequest()
+//                manager.postRequest()
 //                manager.deleteRequest()
             }
         }
