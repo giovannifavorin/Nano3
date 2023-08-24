@@ -18,6 +18,12 @@ struct Quotes {
     let APIResponse: APIResponse
 }
 
+
+struct Employee:Codable{
+    let name:String
+    let salary:Float
+    let age: Int
+}
 class APIViewModel: ObservableObject {
     @Published var quotes: [APIResponse] = [] // Use an array of Quote objects
     let apiObject = APIModel()
@@ -51,7 +57,7 @@ class APIViewModel: ObservableObject {
     func post(){
         Task{
             do{
-              try await apiObject.post(APIurl: url, body: body)
+              try await apiObject.post(APIurl: APIurl2, body: Employee(name: "teste", salary: 1250, age: 33))
             } catch {
                 print(error.localizedDescription)
             }
