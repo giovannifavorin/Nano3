@@ -9,12 +9,8 @@ import Foundation
 import CloudKit
 
 
-class CloudKitModel {
+class CloudKitUtility {
     
-    var isSignedIn: Bool = false
-    var signInError: String = ""
-    var userName: String = ""
-    var permissionStatus: Bool = false
     
     init(){
         //        getIcloudStatus()
@@ -27,15 +23,12 @@ class CloudKitModel {
         return fetchUserID
     }
     
-    func getIcloudName(id: CKRecord.ID){
-        CKContainer.default().discoverUserIdentity(withUserRecordID: id){ [weak self] userName, error in
-            DispatchQueue.main.async {
-                if let name = userName?.nameComponents?.givenName{
-                    self?.userName = name
-                }
-            }
-        }
+    func getIcloudName(id: CKRecord.ID) async throws -> CKUserIdentity?{
+        //        func userIdentity(forUserRecordID userRecordID: CKRecord.ID) async throws -> CKUserIdentity?
+        let name = try await CKContainer.default().userIdentity(forUserRecordID: id)
+          return name
     }
+    
     
     func getIcloudStatus() async throws -> CKAccountStatus{
         let accountStatus = try await CKContainer.default().accountStatus()
@@ -66,7 +59,7 @@ class CloudKitModel {
         case .denied:
             throw CKError(.permissionFailure)
         case .initialState:
-            return CKContainer.ApplicationPermissionStatus.initialState
+            return CKContainer.ApplicationPermissionStatus.denied
         default:
             fatalError("UNKNOW ERROR!!")
         }
@@ -121,3 +114,4 @@ class CloudKitModel {
         CKContainer.default().publicCloudDatabase.add(operation)
     }
 }
+

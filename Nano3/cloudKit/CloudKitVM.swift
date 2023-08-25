@@ -12,15 +12,18 @@ import CloudKit
 class CloudKitVM: ObservableObject{
     
     @Published var status: String = ""
+//    var id: CKRecord.ID
+    
     
     init(){
-//        fetchStatus()
-        fetchID()
         fetchPermission()
+        fetchStatus()
+//        fetchID()
+        fetchUserName()
     }
     
     @Published var text:String = ""
-    var manager = CloudKitModel()
+    var manager = CloudKitUtility()
     
     
     func fetchStatus(){
@@ -39,7 +42,7 @@ class CloudKitVM: ObservableObject{
         Task{
             do{
                 let response = try await manager.getPermission()
-                print(response.rawValue.description)
+                print(response)
             }catch{
                 print(error)
                 print("deu merda")
@@ -51,6 +54,21 @@ class CloudKitVM: ObservableObject{
         Task{
             do{
                 let response = try await manager.getUserID()
+                print(response)
+
+            }catch{
+                print(error)
+            }
+        }
+    }
+    
+    func fetchUserName(){
+        Task{
+            do{
+                let id = try await manager.getUserID()
+                
+                let response = try await manager.getIcloudName(id: id)
+                print(response)
                 
             }catch{
                 print(error)

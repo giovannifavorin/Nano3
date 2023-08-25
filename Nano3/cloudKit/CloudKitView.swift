@@ -34,7 +34,6 @@ struct CloudKitView: View {
                             Text("Add")
                                 .foregroundColor(.white)
                         }
-                   
                 }
             }
         }

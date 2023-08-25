@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AB02E6CE2A979B7C002033A4 /* CloudKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */; };
-		AB02E6D02A979B87002033A4 /* CloudKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6CF2A979B87002033A4 /* CloudKitModel.swift */; };
+		AB02E6D02A979B87002033A4 /* CloudKiUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6CF2A979B87002033A4 /* CloudKiUtility.swift */; };
 		AB02E6D22A979BA0002033A4 /* CloudKitVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6D12A979BA0002033A4 /* CloudKitVM.swift */; };
 		AB3A9F3A2A99040400A6B385 /* CloudKitUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A9F392A99040400A6B385 /* CloudKitUtility.swift */; };
 		AB3A9F3C2A991DC600A6B385 /* TestStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A9F3B2A991DC600A6B385 /* TestStatusView.swift */; };
@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		AB02E6C72A9716D4002033A4 /* Nano3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano3.entitlements; sourceTree = "<group>"; };
 		AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitView.swift; sourceTree = "<group>"; };
-		AB02E6CF2A979B87002033A4 /* CloudKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitModel.swift; sourceTree = "<group>"; };
+		AB02E6CF2A979B87002033A4 /* CloudKiUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKiUtility.swift; sourceTree = "<group>"; };
 		AB02E6D12A979BA0002033A4 /* CloudKitVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitVM.swift; sourceTree = "<group>"; };
 		AB3A9F392A99040400A6B385 /* CloudKitUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUtility.swift; sourceTree = "<group>"; };
 		AB3A9F3B2A991DC600A6B385 /* TestStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatusView.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */,
-				AB02E6CF2A979B87002033A4 /* CloudKitModel.swift */,
+				AB02E6CF2A979B87002033A4 /* CloudKiUtility.swift */,
 				AB02E6D12A979BA0002033A4 /* CloudKitVM.swift */,
 				AB3A9F392A99040400A6B385 /* CloudKitUtility.swift */,
 				AB3A9F3B2A991DC600A6B385 /* TestStatusView.swift */,
@@ -186,7 +186,7 @@
 				AB3A9F3C2A991DC600A6B385 /* TestStatusView.swift in Sources */,
 				AB3A9F3A2A99040400A6B385 /* CloudKitUtility.swift in Sources */,
 				ABCC1F5B2A93E160004AF9DC /* APIModel.swift in Sources */,
-				AB02E6D02A979B87002033A4 /* CloudKitModel.swift in Sources */,
+				AB02E6D02A979B87002033A4 /* CloudKiUtility.swift in Sources */,
 				AB02E6D22A979BA0002033A4 /* CloudKitVM.swift in Sources */,
 				B88804362A9009C600645C90 /* Nano3App.swift in Sources */,
 			);
