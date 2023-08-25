@@ -24,7 +24,6 @@ class CloudKitUtility {
     }
     
     func getIcloudName(id: CKRecord.ID) async throws -> CKUserIdentity?{
-        //        func userIdentity(forUserRecordID userRecordID: CKRecord.ID) async throws -> CKUserIdentity?
         let name = try await CKContainer.default().userIdentity(forUserRecordID: id)
           return name
     }
@@ -46,7 +45,6 @@ class CloudKitUtility {
         }
     }
     
-    
     func getPermission() async throws -> CKContainer.ApplicationPermissionStatus{
         
         let permission = try await CKContainer.default().requestApplicationPermission([.userDiscoverability])
@@ -64,8 +62,7 @@ class CloudKitUtility {
             fatalError("UNKNOW ERROR!!")
         }
     }
-    
-    
+
     func buttonPressed(text: String) {
         guard !text.isEmpty else{ return }
         addItem(phrase: text)

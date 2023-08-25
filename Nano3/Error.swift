@@ -19,4 +19,5 @@ enum CloudKitError: String, Error{
     case accountNotDetermined
     case accountRestricted
     case accountUnknow
+    case nameNotFound
 }

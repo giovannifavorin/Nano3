@@ -66,11 +66,9 @@ class CloudKitVM: ObservableObject{
         Task{
             do{
                 let id = try await manager.getUserID()
-                
-                 let response = try await manager.getIcloudName(id: id)
-                
-//                print(response)
-                
+                guard let response = try await manager.getIcloudName(id: id)?.nameComponents?.givenName else{
+                    throw CloudKitError.nameNotFound
+                }
             }catch{
                 print(error)
             }
