@@ -11,13 +11,6 @@ import CloudKit
 
 class CloudKitUtility {
     
-    
-    init(){
-        //        getIcloudStatus()
-        //        getPermission()
-        //        getUserID()
-    }
-    
     func getUserID() async throws -> CKRecord.ID{
         let fetchUserID = try await CKContainer.default().userRecordID()
         return fetchUserID
@@ -27,7 +20,6 @@ class CloudKitUtility {
         let name = try await CKContainer.default().userIdentity(forUserRecordID: id)
           return name
     }
-    
     
     func getIcloudStatus() async throws -> CKAccountStatus{
         let accountStatus = try await CKContainer.default().accountStatus()
