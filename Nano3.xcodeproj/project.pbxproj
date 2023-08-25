@@ -10,6 +10,8 @@
 		AB02E6CE2A979B7C002033A4 /* CloudKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */; };
 		AB02E6D02A979B87002033A4 /* CloudKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6CF2A979B87002033A4 /* CloudKitModel.swift */; };
 		AB02E6D22A979BA0002033A4 /* CloudKitVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6D12A979BA0002033A4 /* CloudKitVM.swift */; };
+		AB3A9F3A2A99040400A6B385 /* CloudKitUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A9F392A99040400A6B385 /* CloudKitUtility.swift */; };
+		AB3A9F3C2A991DC600A6B385 /* TestStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A9F3B2A991DC600A6B385 /* TestStatusView.swift */; };
 		ABCC1F5B2A93E160004AF9DC /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5A2A93E160004AF9DC /* APIModel.swift */; };
 		ABCC1F5D2A93E1BA004AF9DC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5C2A93E1BA004AF9DC /* Error.swift */; };
 		ABCC1F602A93E419004AF9DC /* ContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5F2A93E419004AF9DC /* ContentVM.swift */; };
@@ -24,6 +26,8 @@
 		AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitView.swift; sourceTree = "<group>"; };
 		AB02E6CF2A979B87002033A4 /* CloudKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitModel.swift; sourceTree = "<group>"; };
 		AB02E6D12A979BA0002033A4 /* CloudKitVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitVM.swift; sourceTree = "<group>"; };
+		AB3A9F392A99040400A6B385 /* CloudKitUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUtility.swift; sourceTree = "<group>"; };
+		AB3A9F3B2A991DC600A6B385 /* TestStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatusView.swift; sourceTree = "<group>"; };
 		ABCC1F5A2A93E160004AF9DC /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		ABCC1F5C2A93E1BA004AF9DC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		ABCC1F5F2A93E419004AF9DC /* ContentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVM.swift; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 				AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */,
 				AB02E6CF2A979B87002033A4 /* CloudKitModel.swift */,
 				AB02E6D12A979BA0002033A4 /* CloudKitVM.swift */,
+				AB3A9F392A99040400A6B385 /* CloudKitUtility.swift */,
+				AB3A9F3B2A991DC600A6B385 /* TestStatusView.swift */,
 			);
 			path = cloudKit;
 			sourceTree = "<group>";
@@ -177,6 +183,8 @@
 				AB02E6CE2A979B7C002033A4 /* CloudKitView.swift in Sources */,
 				B88804382A9009C600645C90 /* ContentView.swift in Sources */,
 				ABCC1F602A93E419004AF9DC /* ContentVM.swift in Sources */,
+				AB3A9F3C2A991DC600A6B385 /* TestStatusView.swift in Sources */,
+				AB3A9F3A2A99040400A6B385 /* CloudKitUtility.swift in Sources */,
 				ABCC1F5B2A93E160004AF9DC /* APIModel.swift in Sources */,
 				AB02E6D02A979B87002033A4 /* CloudKitModel.swift in Sources */,
 				AB02E6D22A979BA0002033A4 /* CloudKitVM.swift in Sources */,
@@ -323,7 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .comsadasdadsa;
+				PRODUCT_BUNDLE_IDENTIFIER = Nano3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -353,7 +361,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = .comsadasdadsa;
+				PRODUCT_BUNDLE_IDENTIFIER = Nano3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

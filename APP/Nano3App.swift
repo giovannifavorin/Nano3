@@ -11,7 +11,7 @@ import SwiftUI
 struct Nano3App: App {
     var body: some Scene {
         WindowGroup {
-            CloudKitView()
+            TestStatusView()
         }
     }
 }

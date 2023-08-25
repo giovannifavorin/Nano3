@@ -39,10 +39,6 @@ class APIModel{
     }
     
     
-    
-    
-    
-    
 
     func post<U: Encodable>(APIurl: String, body: U) async throws {
 
