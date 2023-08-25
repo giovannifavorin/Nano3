@@ -67,8 +67,9 @@ class CloudKitVM: ObservableObject{
             do{
                 let id = try await manager.getUserID()
                 
-                let response = try await manager.getIcloudName(id: id)
-                print(response)
+                 let response = try await manager.getIcloudName(id: id)
+                
+//                print(response)
                 
             }catch{
                 print(error)
