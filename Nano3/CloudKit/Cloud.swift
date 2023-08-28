@@ -93,16 +93,27 @@ class Cloud: ObservableObject{
         
     }
     
-    func deleteItems(indexSet: IndexSet){
+    func deleteItems(indexSet: IndexSet) {
         guard let index = indexSet.first else { return }
-        let frase = frases[index]
-        let record = frase.record
         
-        CKContainer.default().publicCloudDatabase.delete(withRecordID: record.recordID) { [weak self] returnedID, returnedError in
+        // Verifique se o índice é válido para o array
+        guard index < frases.count else {
+            print("Índice fora dos limites")
+            return
+        }
+
+        let frase = frases[index]
+        let recordFrase = frase.record
+                    
+        CKContainer.default().publicCloudDatabase.delete(withRecordID: recordFrase.recordID) { [weak self] returnedID, returnedError in
             DispatchQueue.main.async {
-                self?.frases.remove(at: index)
+                // Verifique novamente para ter certeza de que o índice ainda é válido
+                if index >= 0 && index < self?.frases.count ?? 0 {
+                    self?.frases.remove(at: index)
+                }
             }
         }
     }
+
     
 }
