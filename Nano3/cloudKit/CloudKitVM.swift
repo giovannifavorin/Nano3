@@ -20,6 +20,7 @@ class CloudKitVM: ObservableObject{
         fetchStatus()
 //        fetchID()
         fetchUserName()
+        save()
     }
     
     @Published var text:String = ""
@@ -74,4 +75,27 @@ class CloudKitVM: ObservableObject{
             }
         }
     }
+    
+    // CRUD
+    
+    func save(){
+        Task{
+            do{
+                try await manager.addItem(phrase: "TESTE TESTE TESTE", recordType: "phrases")
+            }catch{
+                print(error)
+            }
+        }
+    }
+    
+//    func fetchItems(){
+//        Task{
+//            do{
+//
+//            }catch{
+//                print(error)
+//            }
+//        }
+//    }
+    
 }

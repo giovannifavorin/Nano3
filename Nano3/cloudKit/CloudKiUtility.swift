@@ -55,52 +55,28 @@ class CloudKitUtility {
         }
     }
 
-    func buttonPressed(text: String) {
-        guard !text.isEmpty else{ return }
-        addItem(phrase: text)
-    }
+
     
-    func addItem(phrase: String){
-        let item = CKRecord(recordType: "phrases")
-        item["phrase"] = phrase
-        saveItem(record: item)
+    func addItem(phrase: String, recordType: String) async throws{
+        let item = CKRecord(recordType: recordType)
+        item[recordType] = phrase
+        try await CKContainer.default().publicCloudDatabase.save(item)
     }
+
     
-    func saveItem(record: CKRecord){
-        CKContainer.default().publicCloudDatabase.save(record) { reurnedRecord, error in
-            print("record: \(String(describing: reurnedRecord))")
-            print("error to save: \(String(describing: error))")
-        }
-    }
-    
-    func fetchItems(){
+    func fetchItems(recordType: String) async throws -> [(CKRecord.ID, Result<CKRecord, any Error>)]{
+        
         let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: "phrases", predicate: predicate)
+        let query = CKQuery(recordType: recordType, predicate: predicate)
         let queryOperation = CKQueryOperation(query: query)
+        let container = CKContainer.default().publicCloudDatabase
+
         
-        var returnedItems: [String] = []
+        let (notesResults, _) = try await container.records(matching: query,
+                                                                resultsLimit: 100)
+            return notesResults
         
-        queryOperation.recordMatchedBlock = { (recordID,result) in
-            switch result{
-            case .success(let record):
-                guard let name = record["phrase"] as? String else { return }
-                returnedItems.append(name)
-                
-            case .failure(let error):
-                print("error matchedBlock: \(error)")
-            }
-        }
-        
-        queryOperation.queryResultBlock = { result in
-            print("query result \(result)")
-            
-        }
-        
-        addOperation(operation: queryOperation)
     }
-    
-    func addOperation(operation: CKDatabaseOperation){
-        CKContainer.default().publicCloudDatabase.add(operation)
-    }
+
 }
 

@@ -10,7 +10,6 @@
 		AB02E6CE2A979B7C002033A4 /* CloudKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */; };
 		AB02E6D02A979B87002033A4 /* CloudKiUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6CF2A979B87002033A4 /* CloudKiUtility.swift */; };
 		AB02E6D22A979BA0002033A4 /* CloudKitVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02E6D12A979BA0002033A4 /* CloudKitVM.swift */; };
-		AB3A9F3A2A99040400A6B385 /* CloudKitUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A9F392A99040400A6B385 /* CloudKitUtility.swift */; };
 		AB3A9F3C2A991DC600A6B385 /* TestStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A9F3B2A991DC600A6B385 /* TestStatusView.swift */; };
 		ABCC1F5B2A93E160004AF9DC /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5A2A93E160004AF9DC /* APIModel.swift */; };
 		ABCC1F5D2A93E1BA004AF9DC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCC1F5C2A93E1BA004AF9DC /* Error.swift */; };
@@ -26,7 +25,6 @@
 		AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitView.swift; sourceTree = "<group>"; };
 		AB02E6CF2A979B87002033A4 /* CloudKiUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKiUtility.swift; sourceTree = "<group>"; };
 		AB02E6D12A979BA0002033A4 /* CloudKitVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitVM.swift; sourceTree = "<group>"; };
-		AB3A9F392A99040400A6B385 /* CloudKitUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUtility.swift; sourceTree = "<group>"; };
 		AB3A9F3B2A991DC600A6B385 /* TestStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatusView.swift; sourceTree = "<group>"; };
 		ABCC1F5A2A93E160004AF9DC /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		ABCC1F5C2A93E1BA004AF9DC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -55,7 +53,6 @@
 				AB02E6CD2A979B7C002033A4 /* CloudKitView.swift */,
 				AB02E6CF2A979B87002033A4 /* CloudKiUtility.swift */,
 				AB02E6D12A979BA0002033A4 /* CloudKitVM.swift */,
-				AB3A9F392A99040400A6B385 /* CloudKitUtility.swift */,
 				AB3A9F3B2A991DC600A6B385 /* TestStatusView.swift */,
 			);
 			path = cloudKit;
@@ -184,7 +181,6 @@
 				B88804382A9009C600645C90 /* ContentView.swift in Sources */,
 				ABCC1F602A93E419004AF9DC /* ContentVM.swift in Sources */,
 				AB3A9F3C2A991DC600A6B385 /* TestStatusView.swift in Sources */,
-				AB3A9F3A2A99040400A6B385 /* CloudKitUtility.swift in Sources */,
 				ABCC1F5B2A93E160004AF9DC /* APIModel.swift in Sources */,
 				AB02E6D02A979B87002033A4 /* CloudKiUtility.swift in Sources */,
 				AB02E6D22A979BA0002033A4 /* CloudKitVM.swift in Sources */,
