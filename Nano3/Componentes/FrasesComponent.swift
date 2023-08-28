@@ -11,6 +11,7 @@ struct FrasesComponent: View {
     
     @StateObject var ViewModel = APIViewModel() //Chamada da API
     @StateObject var persistence : PersistenceController = PersistenceController()
+    @StateObject private var cloud: Cloud = Cloud()
     
     var body: some View {
         
@@ -23,6 +24,7 @@ struct FrasesComponent: View {
                         Spacer()
                         Button {
                             persistence.addQuote(quote: quote)
+                            cloud.addItem(item: quote)
                         } label: {
                             Image(systemName: "folder")
                         }

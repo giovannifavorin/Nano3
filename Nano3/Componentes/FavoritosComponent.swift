@@ -13,11 +13,13 @@ struct FavoritosComponent: View {
     @FetchRequest(entity: Banco.entity(), sortDescriptors: [])
     private var acessoBanco:FetchedResults<Banco>
     @StateObject var persistence : PersistenceController = PersistenceController()
+    @StateObject private var cloud: Cloud = Cloud()
+
     
     var body: some View {
         VStack{
             
-            NavigationStack {
+           // NavigationStack {
                 List(){
                     ForEach(persistence.savedQuotes){ banco in
                         NavigationLink{
@@ -36,10 +38,11 @@ struct FavoritosComponent: View {
                     }
                     .onDelete{ offsets in
                         persistence.removeBanco(at: offsets)
+                        cloud.deleteItems(indexSet: offsets)
                     }
 
                 }
-            }
+          //  }
         }
         .task {
             persistence.fetchQuotes()
