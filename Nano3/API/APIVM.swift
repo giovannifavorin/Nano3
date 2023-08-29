@@ -23,7 +23,7 @@ class APIViewModel: ObservableObject {
     let APIurl = "https://dummy.restapiexample.com/api/v1/create"
     let APIurl2 = "https://reqres.in/api/users"
     
-    let apiObject = APIModel()
+    let apiObject = APIUtility()
 
     func fetch() {
             Task{

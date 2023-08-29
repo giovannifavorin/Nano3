@@ -91,8 +91,9 @@ class CloudKitVM: ObservableObject{
     func fetchItems() {
         Task {
             do {
-                fetchedItems = []
-                
+                DispatchQueue.main.async {
+                    self.fetchedItems = []
+                }
                 let response = try await manager.fetchItems(recordType: "phrases")
     
                 try response.forEach { (_, result) in

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-class APIModel{
+class APIUtility{
     
     func get<T: Decodable>(APIurl: String) async throws -> T {
         
