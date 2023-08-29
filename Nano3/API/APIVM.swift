@@ -36,4 +36,37 @@ class APIViewModel: ObservableObject {
                 }
             }
         }
+    
+    struct PostData: Encodable {
+        let name: String
+        let age: String
+    }
+
+    let APIurl = "https://dummy.restapiexample.com/api/v1/create"
+    let APIurl2 = "https://reqres.in/api/users"
+    let postData = PostData(name: "cleber", age: "i'm 21 years old")
+
+    func postRequest(){
+        Task{
+            do {
+                try await apiObject.post(APIurl: APIurl2, body: postData)
+                print("post done")
+            } catch{
+                print("cant post")
+            }
+        }
+    }
+    
+    func deleteRequest(){
+        Task{
+            do {
+                try await apiObject.delete(APIurl: "https://reqres.in/api/users/2")
+                print("Delete successful")
+            } catch {
+                print("Error deleting data")
+            }
+        }
+    }
 }
+
+

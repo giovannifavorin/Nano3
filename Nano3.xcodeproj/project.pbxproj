@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B780B332A93DE70003F82DA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B322A93DE70003F82DA /* PersistenceController.swift */; };
 		3B780B362A93DE77003F82DA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B342A93DE77003F82DA /* Model.xcdatamodeld */; };
-		3B780B382A93DFDC003F82DA /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B372A93DFDC003F82DA /* ApiRequest.swift */; };
+		3B780B382A93DFDC003F82DA /* APIVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B372A93DFDC003F82DA /* APIVM.swift */; };
 		3B780B3D2A93E337003F82DA /* FrasesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B3C2A93E337003F82DA /* FrasesComponent.swift */; };
 		3B780B412A93E50B003F82DA /* FavoritosComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B402A93E50B003F82DA /* FavoritosComponent.swift */; };
 		62D90F202A96808000B94596 /* FavoritosDetailedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D90F1F2A96808000B94596 /* FavoritosDetailedComponent.swift */; };
@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		3B780B322A93DE70003F82DA /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		3B780B352A93DE77003F82DA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		3B780B372A93DFDC003F82DA /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		3B780B372A93DFDC003F82DA /* APIVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIVM.swift; sourceTree = "<group>"; };
 		3B780B392A93E259003F82DA /* Nano3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nano3.entitlements; sourceTree = "<group>"; };
 		3B780B3C2A93E337003F82DA /* FrasesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrasesComponent.swift; sourceTree = "<group>"; };
 		3B780B402A93E50B003F82DA /* FavoritosComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosComponent.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		3B780B3E2A93E340003F82DA /* API */ = {
 			isa = PBXGroup;
 			children = (
-				3B780B372A93DFDC003F82DA /* ApiRequest.swift */,
+				3B780B372A93DFDC003F82DA /* APIVM.swift */,
 				CEA5DA212A9401B00013CFEE /* APIModel.swift */,
 				CEA5DA222A9401B00013CFEE /* Error.swift */,
 			);
@@ -202,7 +202,7 @@
 				3B780B412A93E50B003F82DA /* FavoritosComponent.swift in Sources */,
 				CEA5DA232A9401B00013CFEE /* APIModel.swift in Sources */,
 				B88804362A9009C600645C90 /* Nano3App.swift in Sources */,
-				3B780B382A93DFDC003F82DA /* ApiRequest.swift in Sources */,
+				3B780B382A93DFDC003F82DA /* APIVM.swift in Sources */,
 				CEA5DA242A9401B00013CFEE /* Error.swift in Sources */,
 				3B780B362A93DE77003F82DA /* Model.xcdatamodeld in Sources */,
 			);
