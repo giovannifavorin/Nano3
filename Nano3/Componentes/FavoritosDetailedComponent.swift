@@ -25,17 +25,8 @@ struct FavoritosDetailedComponent: View {
             Button{
                 
                 Task{
-//                    let post = ViewModel.post(text: frase+"-"+autor)
-//                    
-//                    link = post
-//                    print(post)
+                    ViewModel.
                 }
-              
-               
-                
-                
-                
-                
             }label: {
                 Text("Post")
             }
