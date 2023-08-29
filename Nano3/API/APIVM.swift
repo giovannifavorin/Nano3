@@ -8,16 +8,6 @@
 import CoreData
 import SwiftUI
 
-struct APIResponse: Hashable, Codable {
-    let q: String
-    let a: String
-}
-
-struct Quotes {
-    var isFavorited: Bool
-    let APIResponse: APIResponse
-}
-
 class APIViewModel: ObservableObject {
     @Published var quotes: [APIResponse] = [] // Use an array of Quote objects
     let APIurl = "https://dummy.restapiexample.com/api/v1/create"
