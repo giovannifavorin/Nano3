@@ -12,6 +12,7 @@ import CloudKit
 class CloudKitVM: ObservableObject{
     
     @Published var status: String = ""
+    @Published var fetchedItems: [String] = []
 //    var id: CKRecord.ID
     
     
@@ -20,7 +21,7 @@ class CloudKitVM: ObservableObject{
         fetchStatus()
 //        fetchID()
         fetchUserName()
-        save()
+        fetchItems()
     }
     
     @Published var text:String = ""
@@ -46,7 +47,7 @@ class CloudKitVM: ObservableObject{
                 print(response)
             }catch{
                 print(error)
-                print("deu merda")
+                print("deu ruinm")
             }
         }
     }
@@ -67,7 +68,7 @@ class CloudKitVM: ObservableObject{
         Task{
             do{
                 let id = try await manager.getUserID()
-                guard let response = try await manager.getIcloudName(id: id)?.nameComponents?.givenName else{
+                guard (try await manager.getIcloudName(id: id)?.nameComponents?.givenName) != nil else{
                     throw CloudKitError.nameNotFound
                 }
             }catch{
@@ -78,7 +79,7 @@ class CloudKitVM: ObservableObject{
     
     // CRUD
     
-    func save(){
+    func saveItems(){
         Task{
             do{
                 try await manager.addItem(phrase: "TESTE TESTE TESTE", recordType: "phrases")
@@ -88,14 +89,26 @@ class CloudKitVM: ObservableObject{
         }
     }
     
-//    func fetchItems(){
-//        Task{
-//            do{
-//
-//            }catch{
-//                print(error)
-//            }
-//        }
-//    }
-    
+    func fetchItems() {
+        Task {
+            do {
+                let response = try await manager.fetchItems(recordType: "phrases")
+                
+                try response.forEach { (_, result) in
+                    switch result {
+                    case .success(let record):
+                        if let items = record.value(forKey: "phrases") as? String {
+                            DispatchQueue.main.async {
+                                self.fetchedItems.append(items)
+                            }
+                        }
+                    case .failure(let error):
+                        throw error
+                    }
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
 }
