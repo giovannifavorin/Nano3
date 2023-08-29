@@ -16,14 +16,14 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selectTab){
             NavigationView{
-                FrasesComponent()
+                FrasesView()
             }
             .tabItem {
                 Label("Frases", systemImage: "book")
             }
             .tag(selectTab)
             NavigationView{
-                FavoritosComponent()
+                FavoritosView()
             }
             .tabItem{
                 Label("Favoritos", systemImage: "star.fill")

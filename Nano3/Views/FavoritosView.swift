@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoritosComponent: View {
+struct FavoritosView: View {
     
     @Environment(\.managedObjectContext) private var moc
     @FetchRequest(entity: Banco.entity(), sortDescriptors: [])
@@ -21,7 +21,7 @@ struct FavoritosComponent: View {
                 List(){
                     ForEach(persistence.savedQuotes){ banco in
                         NavigationLink{
-                            FavoritosDetailedComponent(autor: banco.autor ?? "Desconhecido", frase: banco.frase ?? "Deconhecido")
+                            FavoritosDetailedView(autor: banco.autor ?? "Desconhecido", frase: banco.frase ?? "Deconhecido")
                         }label: {
                             VStack{
                                 HStack {
@@ -50,6 +50,6 @@ struct FavoritosComponent: View {
 
 struct FavoritosComponent_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritosComponent()
+        FavoritosView()
     }
 }

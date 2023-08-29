@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoritosDetailedComponent: View {
+struct FavoritosDetailedView: View {
     var ViewModel = APIViewModel()
     var cloudKitManager = CloudKitVM()
     var autor:String
@@ -45,6 +45,6 @@ struct FavoritosDetailedComponent: View {
 
 struct FavoritosDetailedComponent_Previews: PreviewProvider {
     static var previews: some View {
-        FavoritosDetailedComponent(autor: "Andrew Tate", frase: "Breath air!")
+        FavoritosDetailedView(autor: "Andrew Tate", frase: "Breath air!")
     }
 }
