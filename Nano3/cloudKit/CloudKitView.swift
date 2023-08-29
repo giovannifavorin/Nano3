@@ -35,6 +35,11 @@ struct CloudKitView: View {
                                 .foregroundColor(.white)
                         }
                 }
+                List{
+                    ForEach(manager.fetchedItems, id: \.self){ items in
+                        Text(items)
+                    }
+                }
             }
         }
     }

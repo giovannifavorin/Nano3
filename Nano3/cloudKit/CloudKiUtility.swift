@@ -74,9 +74,8 @@ class CloudKitUtility {
         let (notesResults, _) = try await container.records(matching: query,
                                                                 resultsLimit: 100)
         
-//            print(notesResults)
             return notesResults
     }
-
+     
 }
 
