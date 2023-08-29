@@ -12,6 +12,7 @@ import CloudKit
 class CloudKitVM: ObservableObject{
     
     @Published var status: String = ""
+    @Published var fetchedItems: [String] = []
 //    var id: CKRecord.ID
     
     
@@ -20,7 +21,8 @@ class CloudKitVM: ObservableObject{
         fetchStatus()
 //        fetchID()
         fetchUserName()
-        save()
+        fetchItems()
+        fetchItems()
     }
     
     @Published var text:String = ""
@@ -78,7 +80,7 @@ class CloudKitVM: ObservableObject{
     
     // CRUD
     
-    func save(){
+    func saveItems(){
         Task{
             do{
                 try await manager.addItem(phrase: "TESTE TESTE TESTE", recordType: "phrases")
@@ -88,14 +90,25 @@ class CloudKitVM: ObservableObject{
         }
     }
     
-//    func fetchItems(){
-//        Task{
-//            do{
-//
-//            }catch{
-//                print(error)
-//            }
-//        }
-//    }
-    
+    func fetchItems(){
+        Task{
+            do{
+              let response = try await manager.fetchItems(recordType: "phrases")
+             
+            try response.map { (_,result) in
+                 switch result{
+                 case .success(let record):
+                  let items =  record.value(forKey: "phrases")
+                     DispatchQueue.main.async {
+                         self.fetchedItems.append(items as! String)
+                     }
+                 case .failure(let error):
+                     throw error
+                 }
+                }
+            }catch{
+                print(error)
+            }
+        }
+    }
 }

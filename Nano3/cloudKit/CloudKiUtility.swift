@@ -58,6 +58,7 @@ class CloudKitUtility {
 
     
     func addItem(phrase: String, recordType: String) async throws{
+       
         let item = CKRecord(recordType: recordType)
         item[recordType] = phrase
         try await CKContainer.default().publicCloudDatabase.save(item)
@@ -68,14 +69,13 @@ class CloudKitUtility {
         
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: recordType, predicate: predicate)
-        let queryOperation = CKQueryOperation(query: query)
         let container = CKContainer.default().publicCloudDatabase
 
-        
         let (notesResults, _) = try await container.records(matching: query,
                                                                 resultsLimit: 100)
-            return notesResults
         
+//            print(notesResults)
+            return notesResults
     }
 
 }
