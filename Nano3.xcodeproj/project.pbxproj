@@ -13,6 +13,9 @@
 		3B780B3D2A93E337003F82DA /* FrasesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B3C2A93E337003F82DA /* FrasesComponent.swift */; };
 		3B780B412A93E50B003F82DA /* FavoritosComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B780B402A93E50B003F82DA /* FavoritosComponent.swift */; };
 		62D90F202A96808000B94596 /* FavoritosDetailedComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D90F1F2A96808000B94596 /* FavoritosDetailedComponent.swift */; };
+		AB5A1F952A9E27FB001A7094 /* CloudKitUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A1F942A9E27FB001A7094 /* CloudKitUtility.swift */; };
+		AB5A1F972A9E280A001A7094 /* CloudKitVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A1F962A9E280A001A7094 /* CloudKitVM.swift */; };
+		AB5A1F992A9E2820001A7094 /* CloudKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5A1F982A9E2820001A7094 /* CloudKitView.swift */; };
 		B88804362A9009C600645C90 /* Nano3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88804352A9009C600645C90 /* Nano3App.swift */; };
 		B88804382A9009C600645C90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88804372A9009C600645C90 /* ContentView.swift */; };
 		B888043A2A9009C700645C90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88804392A9009C700645C90 /* Assets.xcassets */; };
@@ -29,6 +32,9 @@
 		3B780B3C2A93E337003F82DA /* FrasesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrasesComponent.swift; sourceTree = "<group>"; };
 		3B780B402A93E50B003F82DA /* FavoritosComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosComponent.swift; sourceTree = "<group>"; };
 		62D90F1F2A96808000B94596 /* FavoritosDetailedComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosDetailedComponent.swift; sourceTree = "<group>"; };
+		AB5A1F942A9E27FB001A7094 /* CloudKitUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUtility.swift; sourceTree = "<group>"; };
+		AB5A1F962A9E280A001A7094 /* CloudKitVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitVM.swift; sourceTree = "<group>"; };
+		AB5A1F982A9E2820001A7094 /* CloudKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitView.swift; sourceTree = "<group>"; };
 		B88804322A9009C600645C90 /* Nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B88804352A9009C600645C90 /* Nano3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano3App.swift; sourceTree = "<group>"; };
 		B88804372A9009C600645C90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +92,16 @@
 			path = Componentes;
 			sourceTree = "<group>";
 		};
+		AB5A1F932A9E27C9001A7094 /* CloudKit */ = {
+			isa = PBXGroup;
+			children = (
+				AB5A1F942A9E27FB001A7094 /* CloudKitUtility.swift */,
+				AB5A1F962A9E280A001A7094 /* CloudKitVM.swift */,
+				AB5A1F982A9E2820001A7094 /* CloudKitView.swift */,
+			);
+			path = CloudKit;
+			sourceTree = "<group>";
+		};
 		B88804292A9009C600645C90 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +128,7 @@
 				3B780B3E2A93E340003F82DA /* API */,
 				3B780B312A93DE4B003F82DA /* Persistence */,
 				B88804392A9009C700645C90 /* Assets.xcassets */,
+				AB5A1F932A9E27C9001A7094 /* CloudKit */,
 				B888043B2A9009C700645C90 /* Preview Content */,
 			);
 			path = Nano3;
@@ -199,10 +216,13 @@
 				B88804382A9009C600645C90 /* ContentView.swift in Sources */,
 				3B780B3D2A93E337003F82DA /* FrasesComponent.swift in Sources */,
 				62D90F202A96808000B94596 /* FavoritosDetailedComponent.swift in Sources */,
+				AB5A1F952A9E27FB001A7094 /* CloudKitUtility.swift in Sources */,
 				3B780B412A93E50B003F82DA /* FavoritosComponent.swift in Sources */,
+				AB5A1F992A9E2820001A7094 /* CloudKitView.swift in Sources */,
 				CEA5DA232A9401B00013CFEE /* APIModel.swift in Sources */,
 				B88804362A9009C600645C90 /* Nano3App.swift in Sources */,
 				3B780B382A93DFDC003F82DA /* APIVM.swift in Sources */,
+				AB5A1F972A9E280A001A7094 /* CloudKitVM.swift in Sources */,
 				CEA5DA242A9401B00013CFEE /* Error.swift in Sources */,
 				3B780B362A93DE77003F82DA /* Model.xcdatamodeld in Sources */,
 			);
