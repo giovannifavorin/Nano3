@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavoritosDetailedComponent: View {
     var ViewModel = APIViewModel()
+    var cloudKitManager = CloudKitVM()
     var autor:String
     var frase:String
     @State var link:String?
@@ -23,13 +24,21 @@ struct FavoritosDetailedComponent: View {
                 .foregroundColor(.gray)
         }.toolbar {
             Button{
-                
                 Task{
-                    
+                    ViewModel.postRequest(phrase: frase)
                 }
             }label: {
                 Text("Post")
             }
+            
+            Button{
+                Task{
+                    cloudKitManager.saveItems(phrase: frase)
+                }
+            }label: {
+                Text("icloud")
+            }
+
         }
     }
 }

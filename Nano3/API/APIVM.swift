@@ -20,6 +20,9 @@ struct Quotes {
 
 class APIViewModel: ObservableObject {
     @Published var quotes: [APIResponse] = [] // Use an array of Quote objects
+    let APIurl = "https://dummy.restapiexample.com/api/v1/create"
+    let APIurl2 = "https://reqres.in/api/users"
+    
     let apiObject = APIModel()
 
     func fetch() {
@@ -36,20 +39,12 @@ class APIViewModel: ObservableObject {
                 }
             }
         }
-    
-    struct PostData: Encodable {
-        let name: String
-        let age: String
-    }
-
-    let APIurl = "https://dummy.restapiexample.com/api/v1/create"
-    let APIurl2 = "https://reqres.in/api/users"
-    let postData = PostData(name: "cleber", age: "i'm 21 years old")
-
-    func postRequest(){
+ 
+    func postRequest(phrase: String){
         Task{
             do {
-                try await apiObject.post(APIurl: APIurl2, body: postData)
+                print("aaaaa\(phrase)")
+                try await apiObject.post(APIurl: APIurl, body: "\(phrase)")
                 print("post done")
             } catch{
                 print("cant post")

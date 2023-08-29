@@ -9,6 +9,7 @@ import Foundation
 import CloudKit
 
 
+
 class CloudKitUtility {
     
     func getUserID() async throws -> CKRecord.ID{
@@ -73,6 +74,10 @@ class CloudKitUtility {
                                                                 resultsLimit: 100)
         
             return notesResults
+    }
+    
+    func deleteItems(recordType: String) async throws{
+//        try await CKContainer.default().privateCloudDatabase.deleteRecord(withID: recordType.recordID)
     }
      
 }

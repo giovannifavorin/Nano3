@@ -29,6 +29,13 @@ struct ContentView: View {
                 Label("Favoritos", systemImage: "star.fill")
             }
             .tag(selectTab)
+            NavigationView{
+                CloudKitView()
+            }
+            .tabItem{
+                Label("iCloud", systemImage: "icloud.fill")
+            }
+            .tag(selectTab)
         }
     }
 }

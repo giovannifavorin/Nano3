@@ -13,3 +13,11 @@ enum APIError: Error {
     case invalidResponse(String)
     case invalidData(String)
 }
+
+enum CloudKitError: String, Error{
+    case accountNotfound
+    case accountNotDetermined
+    case accountRestricted
+    case accountUnknow
+    case nameNotFound
+}

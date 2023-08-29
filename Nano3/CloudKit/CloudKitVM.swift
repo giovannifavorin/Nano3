@@ -13,8 +13,7 @@ class CloudKitVM: ObservableObject{
     
     @Published var status: String = ""
     @Published var fetchedItems: [String] = []
-//    var id: CKRecord.ID
-    
+
     
     init(){
         fetchPermission()
@@ -79,10 +78,10 @@ class CloudKitVM: ObservableObject{
     
     // CRUD
     
-    func saveItems(){
+    func saveItems(phrase: String){
         Task{
             do{
-                try await manager.addItem(phrase: "TESTE TESTE TESTE", recordType: "phrases")
+                try await manager.addItem(phrase: phrase, recordType: "phrases")
             }catch{
                 print(error)
             }
@@ -92,8 +91,10 @@ class CloudKitVM: ObservableObject{
     func fetchItems() {
         Task {
             do {
-                let response = try await manager.fetchItems(recordType: "phrases")
+                fetchedItems = []
                 
+                let response = try await manager.fetchItems(recordType: "phrases")
+    
                 try response.forEach { (_, result) in
                     switch result {
                     case .success(let record):
