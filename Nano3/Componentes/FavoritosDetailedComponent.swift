@@ -25,7 +25,7 @@ struct FavoritosDetailedComponent: View {
             Button{
                 
                 Task{
-                    ViewModel.
+                    
                 }
             }label: {
                 Text("Post")
