@@ -12,7 +12,7 @@ struct CloudKitView: View {
     var body: some View {
             List{
                 ForEach(manager.fetchedItems, id: \.self){ items in
-                    Text(items)
+                    Text(items.phrase)
                 }
             }.refreshable {
                 manager.fetchItems()

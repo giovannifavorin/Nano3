@@ -76,8 +76,8 @@ class CloudKitUtility {
             return notesResults
     }
     
-    func deleteItems(recordType: String) async throws{
-//        try await CKContainer.default().privateCloudDatabase.deleteRecord(withID: recordType.recordID)
+    func deleteItems(model: CloudKitModel) async throws{
+        try await CKContainer.default().privateCloudDatabase.deleteRecord(withID: model.recordID.recordID)
     }
      
 }

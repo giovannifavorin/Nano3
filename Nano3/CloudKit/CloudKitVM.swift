@@ -12,13 +12,13 @@ import CloudKit
 class CloudKitVM: ObservableObject{
     
     @Published var status: String = ""
-    @Published var fetchedItems: [String] = []
+    @Published var fetchedItems: [CloudKitModel] = []
 
     
     init(){
         fetchPermission()
         fetchStatus()
-//        fetchID()
+        fetchID()
         fetchUserName()
         fetchItems()
     }
@@ -101,7 +101,7 @@ class CloudKitVM: ObservableObject{
                     case .success(let record):
                         if let items = record.value(forKey: "phrases") as? String {
                             DispatchQueue.main.async {
-                                self.fetchedItems.append(items)
+                                self.fetchedItems.append(CloudKitModel(phrase: items, recordID: record))
                             }
                         }
                     case .failure(let error):
@@ -110,6 +110,15 @@ class CloudKitVM: ObservableObject{
                 }
             } catch {
                 print(error)
+            }
+        }
+        func deleteItems(){
+            Task{
+                do{
+//                    try await manager.deleteItems(model: CloudKitModel(phrase: , recordID: <#T##CKRecord#>))
+                }catch{
+                    print(error)
+                }
             }
         }
     }

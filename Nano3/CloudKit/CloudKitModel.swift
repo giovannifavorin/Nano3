@@ -8,7 +8,7 @@
 import Foundation
 import CloudKit
 
-struct CloudKitModel{
+struct CloudKitModel: Hashable{
     let phrase: String
     let recordID: CKRecord // not the ideal way
 }
